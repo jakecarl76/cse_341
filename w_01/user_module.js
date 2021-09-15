@@ -89,6 +89,9 @@ function req_handler(req, resp)
                     //pull new user name from data, add break (';') for saving to file
                     let new_user = ";" + full_data.split('=')[1];
                     
+                    //write to console
+                    console.log(new_user)
+                    
                     //append new user to file and send response headers
                     fs.appendFile('usrs.txt',
                                   new_user,
@@ -115,9 +118,16 @@ function req_handler(req, resp)
   {
     process.exit();
   }
+  else if(url === '/favicon.ico')
+  {
+    console.log("No icon for you!");
+  }
   else
   {
-    console.log("Error, page does not exist");
+    console.log("Error, page " + url + " does not exist");
+    resp.statusCode = 302;//redirect
+    resp.setHeader('Location', '/');
+    resp.end();
   }
 }
 
