@@ -1,0 +1,16 @@
+{
+  "name": "w_01_app",
+  "version": "1.3.0",
+  "description": "week one assignment app",
+  "main": "assign_01.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon assign_01.js",
+    "start-server": "echo \"Starting Server....\" && node assign_01.js"
+  },
+  "author": "Jacob Carl",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
